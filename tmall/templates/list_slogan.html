@@ -1,0 +1,31 @@
+{% extends "base_list_slogan.html" %}
+{% autoescape None %}
+
+{% block content0 %}
+{% for items0,items1,items2,slogan in zip(itemss0,itemss1,itemss2,slogans) %}
+<div class="box border">
+    <div class="box-title">
+	    <h4><i class="fa fa-square-o"></i> <span class="hidden-inline-mobile">{{ slogan }}</span></h4>
+    </div>
+	<div class="box-body">
+        <!-- TEAM STATUS -->
+		<div class="container team-status" id="team-status">
+		  <div id="scrollbar">
+			<div class="handle">
+			</div>
+		</div>
+		<div id="teamslider">
+			<ul class="team-list">
+				{% for item0,item1,item2 in zip(items0,items1,items2) %}
+				{% if item1 != "None" %}
+				{{ modules.Item(item0,item1,item2) }}
+				{% end %}
+				{% end %}
+			</ul>
+			</div>
+		</div>
+    <!-- /TEAM STATUS -->
+    </div>
+</div>
+{% end %}
+{% end %}

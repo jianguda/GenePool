@@ -1,0 +1,15 @@
+<tr>
+    {% for en in entry %}
+    {% if en != None %}
+    {% if en.find('#')>0 %}
+    <td>{{ en.replace('#','\t') }}</td>
+    {% end %}
+    {% if en.find('#')<=0 %}
+    <td>{{ en }}</td>
+    {% end %}
+    {% end %}
+    {% end %}
+    {% if en == None %}
+    <td>{{""}}</td>
+    {% end %}
+</tr>
